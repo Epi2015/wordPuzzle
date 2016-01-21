@@ -3,13 +3,17 @@ puzzle = function(inputString) {
     return newString
 }
 
+$(document).ready(function(){
+  $("#puzzleText").submit(function(event){
+    // debugger;
+    var inputString =$("#inputString").val();
+    var resolvedString = puzzle (inputString);
+    // location.href = "puzzleOutput.html";
+    $(".calculated").text(resolvedString);
 
-
-// var length = inputString.length;
-// var vowels = []
-//
-// for (i = 0; i < length; i++) {
-//   var result = result + countBy;
-//   vowels.push(result);
-// }
-//   return countArray;
+    $( '#puzzleText' ).each(function(){
+      this.reset();
+    });
+    event.preventDefault();
+  });
+});
